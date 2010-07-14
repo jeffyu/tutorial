@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project>
+
+	<property name="db.scripts.dir" value="${basedir}/target/scripts" />
+	<property name="descriptor.dir" value="${basedir}/src/main/descriptors"/>
+	<property name="META-INF.dir" value="${basedir}/target/classes/META-INF" />
+	
+	<path id="classpath">
+	  <pathelement path="${maven.runtime.classpath}"/>
+	</path>
+	
+	
+  <!-- ================================================================== -->
+  <!-- Database schema                                               -->
+  <!-- ================================================================== -->
+	
+  <target name="create-schema">
+  	
+	<taskdef name="hibernatetool" classname="org.hibernate.tool.ant.HibernateToolTask" 
+		 classpathref="classpath"/>
+
+    <mkdir dir="target"/>
+  	<mkdir dir="target/db" />
+  	<mkdir dir="${db.scripts.dir}" />
+
+    <create-ddl db="${database}"/>
+
+
+  </target>
+
+  <!--
+     ============================================
+     Macro defs, no need to change anything below
+     ============================================
+  -->
+
+  <macrodef name="create-ddl">
+    <attribute name="db"/>
+
+    <sequential>
+      <echo></echo>
+      <echo>=====================</echo>
+      <echo>Create DDL @{db}</echo>
+      
+      <copy file="${descriptor.dir}/persistence.db.xml"
+                toFile="${META-INF.dir}/persistence.xml"
+                overwrite="true">
+        <filterset filtersfile="${basedir}/src/main/files/hibernate.cfg/@{db}.properties" />
+       </copy>
+    	
+        <hibernatetool destdir="${db.scripts.dir}">
+            <jpaconfiguration persistenceunit="professor-unit"/>
+            <hbm2ddl drop="false" create="true" export="${export}" console="false" 
+                    outputfilename="@{db}.create.sql" delimiter=";" format="true" />
+        </hibernatetool>
+
+      <echo>Done.</echo>
+      <echo>=====================</echo>
+    </sequential>
+  </macrodef>
+
+</project>
