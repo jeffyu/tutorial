@@ -2,10 +2,10 @@
   <modelVersion>4.0.0</modelVersion>
   <parent>
     <artifactId>tutorial</artifactId>
-    <groupId>net.familyyu.net.jeff</groupId>
+    <groupId>net.familyyu.jeff</groupId>
     <version>1.0-SNAPSHOT</version>
   </parent>
-  <groupId>net.familyyu.net.jeff.tutorial</groupId>
+  <groupId>net.familyyu.jeff.tutorial</groupId>
   <artifactId>jpa</artifactId>
   <packaging>jar</packaging>
   <version>1.0-SNAPSHOT</version>
