@@ -13,6 +13,7 @@
 
   <modules>
     <module>jpa</module>
+    <module>testng</module>
   </modules>
 
     <build>
