@@ -1,0 +1,20 @@
+#created on: Oct 31, 2010
+package acct
+
+#list any import classes here.
+
+
+
+#declare any global variables here
+
+
+
+
+rule "basic rule"
+	
+	when
+		net.familyyu.jeff.drools.acct.Account (balance < 100);
+	then 
+		System.out.println("Account balance is less than 100");		
+end
+

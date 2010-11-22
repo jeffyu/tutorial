@@ -1,0 +1,34 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <artifactId>tutorial</artifactId>
+    <groupId>net.familyyu.jeff</groupId>
+    <version>1.0-SNAPSHOT</version>
+  </parent>
+  <groupId>net.familyyu.jeff.tutorial</groupId>
+  <artifactId>jbcache</artifactId>
+  <packaging>jar</packaging>
+  <version>1.0-SNAPSHOT</version>
+  <name>jboss cache example</name>
+  <description>jboss cache example</description>
+
+	<properties>
+		<jbcache.version>3.2.6.GA</jbcache.version>
+		<junit.version>4.5</junit.version>
+	</properties>
+
+  <dependencies>
+	<dependency>
+		<groupId>org.jboss.cache</groupId> 
+		<artifactId>jbosscache-core</artifactId> 
+		<version>${jbcache.version}</version>
+	</dependency>
+	<dependency>
+		<groupId>junit</groupId>
+		<artifactId>junit</artifactId>
+		<version>${junit.version}</version>
+		<scope>test</scope>
+	</dependency>	 
+  </dependencies>
+
+</project>
