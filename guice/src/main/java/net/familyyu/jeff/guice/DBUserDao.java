@@ -10,7 +10,7 @@ public class DBUserDao implements UserDao {
 	private final DBConfig dbconfig;
 	
 	@Inject
-	public DBUserDao(DBConfig dbConfig) {
+	private DBUserDao(DBConfig dbConfig) {
 		this.dbconfig = dbConfig;
 	}
 	

@@ -9,7 +9,7 @@ public class UserServiceImpl implements UserService {
 	private final UserDao userDao;
 	
 	@Inject
-	public UserServiceImpl(@Debug UserDao userDao) {
+	private UserServiceImpl(@Debug UserDao userDao) {
 		this.userDao = userDao;
 	}
 
