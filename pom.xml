@@ -15,6 +15,7 @@
     <module>jpa</module>
     <module>testng</module>
     <module>drools</module>
+    <module>resteasy</module>
   </modules>
 
    <repositories>
